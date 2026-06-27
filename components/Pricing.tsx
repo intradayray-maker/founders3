@@ -3,9 +3,9 @@
 import { Check, XMark } from "@/components/ui/Checks"
 
 const stripePriceIds = {
-  basic: process.env.NEXT_PUBLIC_STRIPE_PRICE_BASIC,
-  standard: process.env.NEXT_PUBLIC_STRIPE_PRICE_STANDARD,
-  premium: process.env.NEXT_PUBLIC_STRIPE_PRICE_PREMIUM,
+  basic: process.env.NEXT_PUBLIC_PRICE_BASIC,
+  standard: process.env.NEXT_PUBLIC_PRICE_STANDARD,
+  premium: process.env.NEXT_PUBLIC_PRICE_PREMIUM,
 } as const
 
 export default function Pricing() {
