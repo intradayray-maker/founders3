@@ -28,10 +28,9 @@ export async function POST(req: Request) {
     const photos = formData.getAll("photos") as File[]
     const audioFile = formData.get("audio") as File | null
 
-    // PRICE FORMAT (remove decimals)
+    // PRICE FORMAT
     const priceAmountNum = Number(priceAmountRaw || 0)
     const pricePaid = Math.round(priceAmountNum / 100)
-
     const priceCurrencyStr =
       typeof priceCurrencyRaw === "string"
         ? priceCurrencyRaw.toUpperCase()
@@ -62,11 +61,9 @@ export async function POST(req: Request) {
       }
     })
 
-    // CLEAN WHITE EMAIL — NO BACKGROUND COLORS
+    // INTERNAL EMAIL (to you)
     const html = `
       <div style="font-family:Arial, sans-serif; padding:20px; color:#000;">
-
-        <!-- STRIPE DETAILS -->
         <h2 style="
           margin:0 0 12px 0;
           font-size:22px;
@@ -78,29 +75,14 @@ export async function POST(req: Request) {
           Stripe Order Details
         </h2>
 
-        <p style="margin:4px 0; color:#444;">
-          <strong style="color:#000;">Package Ordered:</strong> ${packageTier || productName}
-        </p>
+        <p><strong>Package Ordered:</strong> ${packageTier || productName}</p>
+        <p><strong>Price Paid:</strong> $${pricePaid} ${priceCurrencyStr}</p>
+        <p><strong>Order ID:</strong> ${orderId}</p>
+        <p><strong>Customer Email:</strong> ${customerEmail}</p>
+        <p><strong>Purchase Time:</strong> ${purchaseTimeFormatted}</p>
 
-        <p style="margin:4px 0; color:#444;">
-          <strong style="color:#000;">Price Paid:</strong> $${pricePaid} ${priceCurrencyStr}
-        </p>
+        <hr style="margin:25px 0;" />
 
-        <p style="margin:4px 0; color:#444;">
-          <strong style="color:#000;">Order ID:</strong> ${orderId}
-        </p>
-
-        <p style="margin:4px 0; color:#444;">
-          <strong style="color:#000;">Customer Email:</strong> ${customerEmail}
-        </p>
-
-        <p style="margin:4px 0; color:#444;">
-          <strong style="color:#000;">Purchase Time:</strong> ${purchaseTimeFormatted}
-        </p>
-
-        <hr style="margin:25px 0; border:none; border-top:1px solid #ddd;" />
-
-        <!-- FORM DETAILS -->
         <h2 style="
           margin:0 0 12px 0;
           font-size:20px;
@@ -112,48 +94,17 @@ export async function POST(req: Request) {
           Client Submission Details
         </h2>
 
-        <p style="margin:4px 0; color:#555;">
-          <strong style="color:#000;">Product Description:</strong> ${productDescription}
-        </p>
+        <p><strong>Product Description:</strong> ${productDescription}</p>
+        <p><strong>UGC Actor:</strong> ${audience}</p>
+        <p><strong>Video Length:</strong> ${videoLength} seconds</p>
+        <p><strong>Audio Preference:</strong> ${voiceover}</p>
 
-        <p style="margin:4px 0; color:#555;">
-          <strong style="color:#000;">UGC Actor:</strong> ${audience}
-        </p>
+        ${musicGenre ? `<p><strong>Music Genre:</strong> ${musicGenre}</p>` : ""}
 
-        <p style="margin:4px 0; color:#555;">
-          <strong style="color:#000;">Video Length:</strong> ${videoLength} seconds
-        </p>
-
-        <p style="margin:4px 0; color:#555;">
-          <strong style="color:#000;">Audio Preference:</strong> ${voiceover}
-        </p>
-
-        ${
-          musicGenre
-            ? `
-        <p style="margin:4px 0; color:#555;">
-          <strong style="color:#000;">Music Genre:</strong> ${musicGenre}
-        </p>
-        `
-            : ""
-        }
-
-        <p style="margin:4px 0; color:#555;">
-          <strong style="color:#000;">Hook Style:</strong> ${hook}
-        </p>
-
-        <p style="margin:4px 0; color:#555;">
-          <strong style="color:#000;">Video Style:</strong> ${style}
-        </p>
-
-        <p style="margin:4px 0; color:#555;">
-          <strong style="color:#000;">CTA:</strong> ${cta}
-        </p>
-
-        <p style="margin:4px 0; color:#555;">
-          <strong style="color:#000;">Notes:</strong> ${notes}
-        </p>
-
+        <p><strong>Hook Style:</strong> ${hook}</p>
+        <p><strong>Video Style:</strong> ${style}</p>
+        <p><strong>CTA:</strong> ${cta}</p>
+        <p><strong>Notes:</strong> ${notes}</p>
       </div>
     `
 
@@ -172,7 +123,7 @@ export async function POST(req: Request) {
       })
     }
 
-    // SEND EMAIL
+    // SEND INTERNAL EMAIL (to you)
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: "support.vaylo@gmail.com",
@@ -180,6 +131,30 @@ export async function POST(req: Request) {
       html,
       attachments
     })
+
+    // ⭐ SEND AUTOMATED CLIENT EMAIL ⭐
+    if (customerEmail) {
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: customerEmail,
+        subject: "Your Assets Are In — Production Started 🎬",
+        text: `
+Hi there,
+
+Your assets have been successfully received — thank you for sending everything over.
+Your video is now in the production queue and our team has started working on it.
+
+What happens next:
+• Your video will be fully produced within 24 hours
+• You’ll receive a private delivery link via email
+• If anything is missing or unclear, we’ll reach out immediately
+
+Thanks again — excited to bring your product to life.
+
+– Vaylo Team
+        `
+      })
+    }
 
     return NextResponse.json({ ok: true })
   } catch (err) {
