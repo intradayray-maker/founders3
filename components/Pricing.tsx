@@ -59,22 +59,21 @@ export default function Pricing() {
           </h3>
 
           <p className="text-white/40 text-sm mb-4">
-            For brands needing quick & punchy ads.
+            For brands wanting quick, punchy ads.
           </p>
 
-<ul className="text-white/60 mb-6 space-y-2">
-  <li><Check /> Up to 15 seconds</li>
-  <li><Check /> (1) Ad only </li>  
-  <li><Check /> UGC‑Style AI Product Ad</li>
-  <li><Check /> Hyper‑realistic AI actor</li>
-  <li><Check /> Perfect lip‑sync or voiceover</li>
-  <li><Check /> Pro video editing</li>
-  <li><Check /> Music & SFX (when needed)</li>
-  <li><Check /> Vertical or horizontal (9:16 / 16:9)</li>
-  <li><Check /> 48‑Hour delivery</li>
-  <li><Check /> 1 revision</li>
-</ul>
-
+          <ul className="text-white/60 mb-6 space-y-2">
+            <li className="text-white font-semibold"><Check /> 15‑second max duration</li>
+            <li className="text-white font-semibold"><Check /> One short ad</li>
+            <li><Check /> UGC‑Style AI Product Ad</li>
+            <li><Check /> Hyper‑realistic AI actor</li>
+            <li><Check /> Perfect lip‑sync or voiceover</li>
+            <li><Check /> Pro video editing</li>
+            <li><Check /> Music & SFX (when needed)</li>
+            <li><Check /> Vertical or horizontal (9:16 / 16:9)</li>
+            <li><Check /> 48‑Hour delivery</li>
+            <li><Check /> 1 revision</li>
+          </ul>
 
           <button
             type="button"
@@ -97,21 +96,21 @@ export default function Pricing() {
           </h3>
 
           <p className="text-white/40 text-sm mb-4">
-            Best for a FULL attention grabbing ad.
+            Best for a full attention‑grabbing ad.
           </p>
 
-<ul className="text-white/60 mb-6 space-y-2">
-  <li><Check /> Up to 30 seconds</li>
-  <li><Check /> (1) 30 sec Ad OR (2) 15 sec Ads </li>  
-  <li><Check /> UGC‑Style AI Product Ad</li>
-  <li><Check /> Hyper‑realistic AI actor</li>
-  <li><Check /> Perfect lip‑sync or voiceover</li>
-  <li><Check /> Pro video editing</li>
-  <li><Check /> Music & SFX (when needed)</li>
-  <li><Check /> Vertical or horizontal (9:16 / 16:9)</li>
-  <li><Check /> 48‑Hour delivery</li>
-  <li><Check /> 2 revisions</li>
-</ul>
+          <ul className="text-white/60 mb-6 space-y-2">
+            <li className="text-white font-semibold"><Check /> 30‑second max duration</li>
+            <li className="text-white font-semibold"><Check /> One long ad or two separate ads</li>
+            <li><Check /> UGC‑Style AI Product Ad</li>
+            <li><Check /> Hyper‑realistic AI actor</li>
+            <li><Check /> Perfect lip‑sync or voiceover</li>
+            <li><Check /> Pro video editing</li>
+            <li><Check /> Music & SFX (when needed)</li>
+            <li><Check /> Vertical or horizontal (9:16 / 16:9)</li>
+            <li><Check /> 48‑Hour delivery</li>
+            <li><Check /> 2 revisions</li>
+          </ul>
 
           <button
             type="button"
@@ -129,21 +128,21 @@ export default function Pricing() {
           </h3>
 
           <p className="text-white/40 text-sm mb-4">
-            For brands needing longer video ads.
+            For brands wanting longer, more detailed ads.
           </p>
 
-<ul className="text-white/60 mb-6 space-y-2">
-  <li><Check /> Up to 60 seconds</li>
-  <li><Check /> (1) 60 sec OR upto (3) seperate ads </li>    
-  <li><Check /> UGC‑Style AI Product Ad</li>
-  <li><Check /> Hyper‑realistic AI actor</li>
-  <li><Check /> Perfect lip‑sync or voiceover</li>
-  <li><Check /> Pro video editing</li>
-  <li><Check /> Music & SFX (when needed)</li>
-  <li><Check /> Vertical or horizontal (9:16 / 16:9)</li>
-  <li><Check /> 72‑Hour delivery</li>
-  <li><Check /> 2 revisions</li>
-</ul>
+          <ul className="text-white/60 mb-6 space-y-2">
+            <li className="text-white font-semibold"><Check /> 60‑second max duration</li>
+            <li className="text-white font-semibold"><Check /> One long ad or three separate ads</li>
+            <li><Check /> UGC‑Style AI Product Ad</li>
+            <li><Check /> Hyper‑realistic AI actor</li>
+            <li><Check /> Perfect lip‑sync or voiceover</li>
+            <li><Check /> Pro video editing</li>
+            <li><Check /> Music & SFX (when needed)</li>
+            <li><Check /> Vertical or horizontal (9:16 / 16:9)</li>
+            <li><Check /> 72‑Hour delivery</li>
+            <li><Check /> 2 revisions</li>
+          </ul>
 
           <button
             type="button"
@@ -156,7 +155,7 @@ export default function Pricing() {
 
       </div>
 
-      <div className="max-w-xl mx-auto text-center mt-22 bg-card border border-border rounded-xl p-12">
+      {/* <div className="max-w-xl mx-auto text-center mt-22 bg-card border border-border rounded-xl p-12">
         <h3 className="text-xl font-semibold mb-2">
           Influencer Boost 🚀
         </h3>
@@ -172,9 +171,8 @@ export default function Pricing() {
         <a className="bg-accent hover:bg-accent-hover text-center py-3 px-14 rounded-xl shadow-glow transition">
           DM for More Info
         </a>
-      </div>
+      </div> */}
 
     </section>
   )
 }
-// test 1 

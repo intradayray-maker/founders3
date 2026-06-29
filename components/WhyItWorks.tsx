@@ -13,8 +13,8 @@ export default function WhyItWorks() {
             Unlimited Characters
           </h3>
           <p className="text-white/60 text-base leading-relaxed">
-            AI can match your dream persona, look, vibe, and energy.
-            UGC creators are limited by who they are, how they look,
+            AI UGC actors can match your dream persona, look, vibe, and energy.
+            Human UGC creators are limited by who they are, how they look,
             and what they can express.
           </p>
         </div>
@@ -24,7 +24,7 @@ export default function WhyItWorks() {
             Perfect Consistency
           </h3>
           <p className="text-white/60 text-base leading-relaxed">
-            No bad lighting. No awkward takes. No off days.
+            AI UGC actors have - No bad lighting. No awkward takes. No off days.
             AI delivers the exact tone, style, and energy your brand needs —
             every single time.
           </p>
@@ -35,8 +35,8 @@ export default function WhyItWorks() {
             Instant Adaptation
           </h3>
           <p className="text-white/60 text-base leading-relaxed">
-            You have total control over the actor, style, and scene.
-            UGC requires re‑shoots, scheduling, and creator availability.
+            With ai generated content we have total control over the actor, style, and scene.
+            Human UGC creators require re‑shoots, scheduling, and creator availability.
           </p>
         </div>
 

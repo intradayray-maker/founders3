@@ -1,11 +1,11 @@
 export default function FAQ() {
   const faqs = [
     ["How fast is delivery?", "Most orders are delivered within 48 hours."],
-    ["What platforms are videos optimized for?", "TikTok, Instagram Reels, YouTube Shorts, and paid ads."],
+    ["What platforms are videos optimized for?", "TikTok, Instagram Reels, YouTube Shorts, Facbook, and paid ads."],
     ["Do you offer revisions?", "Yes — simple adjustments are included."],
     ["Can you add voiceover?", "Yes. We use high-quality AI voiceovers on request."],
-    ["Can you make multiple variations?", "Yes — that’s what the Standard and Premium packages are for."],
-    ["Do you offer influencer marketing?", "Yes — we can connect your product with creators."]
+    ["Do I need to have a script?", "No — you can BUT all you need is an idea - we'll take it from there."],
+    ["Do you offer influencer marketing?", "Yes — we can connect your video ad with the RIGHT top influencers for MAXIMUM exposure."]
   ];
 
   return (

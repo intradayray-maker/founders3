@@ -16,7 +16,7 @@ export default function HowItWorks() {
           />
           <h3 className="text-xl font-semibold mb-2">1 — Send Your Product Photo</h3>
           <p className="text-white/60">
-            DM or upload your product image
+            Upload your product image along with all your ad details.
           </p>
         </div>
 
@@ -29,7 +29,8 @@ export default function HowItWorks() {
           />
           <h3 className="text-xl font-semibold mb-2">2 — We Generate Your Video Ads</h3>
           <p className="text-white/60">
-            AI Generated with PRO Level Editing
+            We handle all the backend storyboarding, prompt engineering, video generation, 
+            pro‑level editing — basically all the technical work — so you don’t have to.
           </p>
         </div>
 
@@ -42,7 +43,8 @@ export default function HowItWorks() {
           />
           <h3 className="text-xl font-semibold mb-2">3 — You Post & Get Sales</h3>
           <p className="text-white/60">
-            Perfect for Short Form 9:16 ads.
+            We deliver your video with lightning‑fast turnaround, handle any necessary revisions, 
+            and you sit back and watch the sales come in.
           </p>
         </div>
 

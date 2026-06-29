@@ -23,7 +23,13 @@ export async function POST(req: Request) {
     const notes = String(formData.get("notes") || "")
     const musicGenre = String(formData.get("musicGenre") || "")
     const voiceover = String(formData.get("voiceover") || "")
-    const videoLength = String(formData.get("videoLength") || "")
+
+    // NEW FIELDS
+    const orientation = String(formData.get("orientation") || "")
+    const adStructure = String(formData.get("adStructure") || "")
+
+    // REMOVE OLD FIELD
+    // const videoLength = String(formData.get("videoLength") || "")
 
     const photos = formData.getAll("photos") as File[]
     const audioFile = formData.get("audio") as File | null
@@ -96,9 +102,11 @@ export async function POST(req: Request) {
 
         <p><strong>Product Description:</strong> ${productDescription}</p>
         <p><strong>UGC Actor:</strong> ${audience}</p>
-        <p><strong>Video Length:</strong> ${videoLength} seconds</p>
-        <p><strong>Audio Preference:</strong> ${voiceover}</p>
 
+        <p><strong>Orientation:</strong> ${orientation}</p>
+        <p><strong>Ad Structure:</strong> ${adStructure}</p>
+
+        <p><strong>Audio Preference:</strong> ${voiceover}</p>
         ${musicGenre ? `<p><strong>Music Genre:</strong> ${musicGenre}</p>` : ""}
 
         <p><strong>Hook Style:</strong> ${hook}</p>

@@ -376,16 +376,29 @@ export default function ThankYouPage() {
             />
           </div>
 
-          {/* VIDEO LENGTH — REQUIRED */}
+          {/* ORIENTATION — REQUIRED */}
           <UltraSelect
-            label="Video Length *"
-            name="videoLength"
+            label="Orientation * (Basically - Tiktok style or Youtube style)"
+            name="orientation"
             required={true}
             options={[
-              { label: "15 seconds", value: "15" },
-              { label: "30 seconds", value: "30" }
+              { label: "Vertical — 9:16", value: "9:16" },
+              { label: "Horizontal — 16:9", value: "16:9" }
             ]}
           />
+
+          {/* AD STRUCTURE — REQUIRED */}
+          <UltraSelect
+            label="Ad Structure * (depending on the package you chose)"
+            name="adStructure"
+            required={true}
+            options={[
+              { label: "One long ad", value: "long" },
+              { label: "Two separate ads", value: "two" },
+              { label: "Three separate ads", value: "three" }
+            ]}
+          />
+
 
           {/* SCRIPT */}
           <div className="flex flex-col">
