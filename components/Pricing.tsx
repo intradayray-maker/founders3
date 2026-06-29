@@ -87,9 +87,10 @@ export default function Pricing() {
         {/* STANDARD */}
         <div className="bg-card/90 border border-accent rounded-xl p-8 pt-12 shadow-[0_0_40px_rgba(139,92,246,0.35)] flex flex-col relative overflow-visible">
 
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-black text-xs font-semibold px-4 py-1.5 rounded-full z-20">
-            Most Popular
-          </div>
+<div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white border border-white text-xs font-semibold px-4 py-1.5 rounded-full z-20">
+  Most Popular
+</div>
+
 
           <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-emerald-400 to-purple-500 bg-clip-text text-transparent">
             Standard — $90
