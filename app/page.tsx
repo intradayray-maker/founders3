@@ -53,9 +53,9 @@ export default function Home() {
           <WhyItWorks />
         </div>
         
-        <div className="mb-24">
+        {/* <div className="mb-24">
           <SocialProof />
-        </div>
+        </div> */}
 
         <div className="mb-24">
           <HowItWorks />
