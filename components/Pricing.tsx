@@ -11,12 +11,7 @@ const stripePriceIds = {
 export default function Pricing() {
 
   async function handleBuy(priceId: string) {
-    console.log("Using priceId:", priceId)
-
-    if (!priceId) {
-      console.error("Missing Stripe price ID")
-      return
-    }
+    if (!priceId) return
 
     try {
       const res = await fetch("/api/checkout", {
@@ -25,21 +20,10 @@ export default function Pricing() {
         body: JSON.stringify({ priceId })
       })
 
-      if (!res.ok) {
-        const error = await res.json().catch(() => null)
-        console.error("Stripe checkout error:", error ?? res.statusText)
-        return
-      }
-
       const data = await res.json()
-
-      if (data?.url) {
-        window.location.assign(data.url)
-      } else {
-        console.error("Stripe error:", data)
-      }
+      if (data?.url) window.location.assign(data.url)
     } catch (err) {
-      console.error("Checkout request failed:", err)
+      console.error(err)
     }
   }
 
@@ -47,32 +31,37 @@ export default function Pricing() {
     <section id="pricing" className="py-2 px-6">
 
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-18">
-        Simple Pricing. Fast Delivery.
+        Strategy Call Pricing
       </h2>
+
+      <p className="text-center text-white/60 max-w-xl mx-auto mb-10">
+        All call fees are credited toward your final Creator Ads System bill.
+        These calls help founders understand their product‑to‑creator fit,
+        distribution strategy, and rollout plan before committing to the full
+        creator‑powered distribution budget.
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
-        {/* BASIC */}
+        {/* STARTER CALL */}
         <div className="bg-card border border-border rounded-xl p-8 flex flex-col">
-          <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-emerald-400 to-purple-500 bg-clip-text text-transparent">
-            Basic — $50
+          <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-emerald-400 to-teal-900 bg-clip-text text-transparent">
+            Starter Call — $50
           </h3>
 
           <p className="text-white/40 text-sm mb-4">
-            For brands wanting quick, punchy ads.
+            20‑minute clarity call for early‑stage founders.
           </p>
 
           <ul className="text-white/60 mb-6 space-y-2">
-            <li className="text-white font-semibold"><Check /> 15‑second max duration</li>
-            <li className="text-white font-semibold"><Check /> One short ad</li>
-            <li><Check /> UGC‑Style AI Product Ad</li>
-            <li><Check /> Hyper‑realistic AI actor</li>
-            <li><Check /> Perfect lip‑sync or voiceover</li>
-            <li><Check /> Pro video editing</li>
-            <li><Check /> Music & SFX (when needed)</li>
-            <li><Check /> Vertical or horizontal (9:16 / 16:9)</li>
-            <li><Check /> 48‑Hour delivery</li>
-            <li><Check /> 1 revision</li>
+            <li><Check /> Product analysis</li>
+            <li><Check /> Creator fit overview</li>
+            <li><Check /> Distribution direction</li>
+            <li><Check /> Roadmap preview</li>
+            <li><Check /> Call fee credited toward final bill</li>
+            <li><XMark /> No creator hunt</li>
+            <li><XMark /> No ad concepts</li>
+            <li><XMark /> No negotiation strategy</li>
           </ul>
 
           <button
@@ -80,37 +69,34 @@ export default function Pricing() {
             onClick={() => handleBuy(stripePriceIds.basic ?? "")}
             className="mt-auto bg-accent hover:bg-accent-hover text-center py-3 px-4 rounded-xl shadow-glow transition"
           >
-            Get BASIC Now
+            Book Starter Call
           </button>
         </div>
 
-        {/* STANDARD */}
+        {/* DEEP DIVE CALL */}
         <div className="bg-card/90 border border-accent rounded-xl p-8 pt-12 shadow-[0_0_40px_rgba(139,92,246,0.35)] flex flex-col relative overflow-visible">
 
-<div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white border border-white text-xs font-semibold px-4 py-1.5 rounded-full z-20">
-  Most Popular
-</div>
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white border border-white text-xs font-semibold px-4 py-1.5 rounded-full z-20">
+            Most Popular
+          </div>
 
-
-          <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-emerald-400 to-purple-500 bg-clip-text text-transparent">
-            Standard — $90
+          <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-emerald-400 to-teal-900 bg-clip-text text-transparent">
+            Deep Dive Call — $100
           </h3>
 
           <p className="text-white/40 text-sm mb-4">
-            Best for a full attention‑grabbing ad.
+            40‑minute breakdown for founders needing full clarity.
           </p>
 
           <ul className="text-white/60 mb-6 space-y-2">
-            <li className="text-white font-semibold"><Check /> 30‑second max duration</li>
-            <li className="text-white font-semibold"><Check /> One long ad or two separate ads</li>
-            <li><Check /> UGC‑Style AI Product Ad</li>
-            <li><Check /> Hyper‑realistic AI actor</li>
-            <li><Check /> Perfect lip‑sync or voiceover</li>
-            <li><Check /> Pro video editing</li>
-            <li><Check /> Music & SFX (when needed)</li>
-            <li><Check /> Vertical or horizontal (9:16 / 16:9)</li>
-            <li><Check /> 48‑Hour delivery</li>
-            <li><Check /> 2 revisions</li>
+            <li><Check /> Full product analysis</li>
+            <li><Check /> Creator fit + niche mapping</li>
+            <li><Check /> Distribution strategy</li>
+            <li><Check /> Creator hunt preview</li>
+            <li><Check /> Ad concept ideas</li>
+            <li><Check /> Call fee credited toward final bill</li>
+            <li><XMark /> No outreach strategy</li>
+            <li><XMark /> No partnership negotiation</li>
           </ul>
 
           <button
@@ -118,31 +104,29 @@ export default function Pricing() {
             onClick={() => handleBuy(stripePriceIds.standard ?? "")}
             className="mt-auto bg-accent hover:bg-accent-hover text-center py-3 px-4 rounded-xl transition"
           >
-            Get STANDARD Now
+            Book Deep Dive Call
           </button>
         </div>
 
-        {/* PREMIUM */}
+        {/* BLUEPRINT CALL */}
         <div className="bg-card border border-border rounded-xl p-8 flex flex-col">
-          <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-emerald-400 to-purple-500 bg-clip-text text-transparent">
-            Premium — $130
+          <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-emerald-400 to-teal-900 bg-clip-text text-transparent">
+            Blueprint Call — $120
           </h3>
 
           <p className="text-white/40 text-sm mb-4">
-            For brands wanting longer, more detailed ads.
+            60‑minute full rollout plan for serious founders.
           </p>
 
           <ul className="text-white/60 mb-6 space-y-2">
-            <li className="text-white font-semibold"><Check /> 60‑second max duration</li>
-            <li className="text-white font-semibold"><Check /> One long ad or three separate ads</li>
-            <li><Check /> UGC‑Style AI Product Ad</li>
-            <li><Check /> Hyper‑realistic AI actor</li>
-            <li><Check /> Perfect lip‑sync or voiceover</li>
-            <li><Check /> Pro video editing</li>
-            <li><Check /> Music & SFX (when needed)</li>
-            <li><Check /> Vertical or horizontal (9:16 / 16:9)</li>
-            <li><Check /> 72‑Hour delivery</li>
-            <li><Check /> 2 revisions</li>
+            <li><Check /> Full product breakdown</li>
+            <li><Check /> Creator fit + trust mapping</li>
+            <li><Check /> Distribution + scaling strategy</li>
+            <li><Check /> Full creator hunt preview</li>
+            <li><Check /> Multiple ad concepts</li>
+            <li><Check /> Outreach strategy</li>
+            <li><Check /> Partnership negotiation plan</li>
+            <li><Check /> Call fee credited toward final bill</li>
           </ul>
 
           <button
@@ -150,29 +134,11 @@ export default function Pricing() {
             onClick={() => handleBuy(stripePriceIds.premium ?? "")}
             className="mt-auto bg-accent hover:bg-accent-hover text-center py-3 px-4 rounded-xl transition"
           >
-            Get PREMIUM Now
+            Book Blueprint Call
           </button>
         </div>
 
       </div>
-
-      {/* <div className="max-w-xl mx-auto text-center mt-22 bg-card border border-border rounded-xl p-12">
-        <h3 className="text-xl font-semibold mb-2">
-          Influencer Boost 🚀
-        </h3>
-
-        <p className="text-white/60 mb-4">
-          Expand your reach with our in‑house marketing strategy.
-        </p>
-
-        <p className="text-white/40 text-sm mb-7">
-          Get your ad in front of 1M+ shoppers.
-        </p>
-
-        <a className="bg-accent hover:bg-accent-hover text-center py-3 px-14 rounded-xl shadow-glow transition">
-          DM for More Info
-        </a>
-      </div> */}
 
     </section>
   )

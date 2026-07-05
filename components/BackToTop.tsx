@@ -23,9 +23,10 @@ export default function BackToTop() {
         flex
         items-center
         justify-center
-        bg-purple-800
-        shadow-[0_0_20px_rgba(168,85,247,0.45)]
-        hover:shadow-[0_0_30px_rgba(168,85,247,0.65)]
+        bg-accent
+        hover:bg-accent-hover
+        shadow-[0_0_20px_rgba(27,87,113,0.45)]
+        hover:shadow-[0_0_30px_rgba(27,87,113,0.65)]
         text-white
         text-xl
         z-50

@@ -1,37 +1,40 @@
 import "./globals.css"
 
 export const metadata = {
-  title: "Vaylo | Premium AI UGC Ads",
-  description: "Premium AI‑generated UGC product ads delivered in 48 hours.",
+  title: "Founders Growth | Creator‑Powered Growth for SaaS & AI Tools",
+  description:
+    "Creator‑powered growth for SaaS, AI tools, and ecom brands. I find the perfect creators, make the ads, and negotiate the deals.",
   keywords: [
-    "AI UGC ads",
-    "AI product videos",
-    "TikTok ads",
-    "Shopify product ads",
-    "dropshipping ads",
-    "AI video generation",
-    "UGC creators",
-    "product marketing"
+    "creator ads",
+    "UGC ads",
+    "SaaS marketing",
+    "AI tool growth",
+    "creator outreach",
+    "product walkthroughs",
+    "founder growth",
+    "creator‑powered distribution"
   ],
   openGraph: {
-    title: "Vaylo | Premium AI UGC Ads",
-    description: "Premium AI‑generated UGC product ads delivered in 48 hours.",
-    url: "https://www.vaylo.fun",
-    siteName: "Vaylo",
+    title: "Founders Growth | Creator‑Powered Growth",
+    description:
+      "Scale using creator‑powered distribution instead of traditional paid ads.",
+    url: "https://www.Founders Growth.fun",
+    siteName: "Founders Growth",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Vaylo AI UGC Ads"
+        alt: "Founders Growth"
       }
     ],
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vaylo | Premium AI UGC Ads",
-    description: "Premium AI‑generated UGC product ads delivered in 48 hours.",
+    title: "Founders Growth | Creator‑Powered Growth",
+    description:
+      "I find the perfect creators, make the ads, and negotiate the deals.",
     images: ["/og-image.png"]
   }
 }
@@ -45,14 +48,15 @@ export default function RootLayout({
     <html lang="en">
       <body className="min-h-screen bg-background text-text antialiased">
 
+        {/* Top-left brand */}
         <div className="absolute top-9 left-6 z-50 flex items-center gap-2">
           <img
             src="/logo.png"
-            alt="Vaylo"
+            alt="Founders Growth"
             className="h-8 w-auto"
           />
           <span className="text-xl font-semibold tracking-tight">
-            Vaylo
+            Founders Growth
           </span>
         </div>
 

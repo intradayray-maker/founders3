@@ -1,0 +1,12 @@
+
+> vaylo@0.1.0 dev
+> next dev --webpack
+
+▲ Next.js 16.2.9 (webpack)
+- Local:         http://localhost:3000
+- Network:       http://10.118.1.110:3000
+- Environments: .env.local
+✓ Ready in 715ms
+
+○ Compiling / ...
+ GET / 200 in 5.0s (next.js: 4.7s, application-code: 300ms)

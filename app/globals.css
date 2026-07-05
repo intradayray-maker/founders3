@@ -7,8 +7,8 @@
   --card: #111111;
   --border: #1f1f1f;
   --text: #ffffff;
-  --accent: #4f2e9c;
-  --accent-hover: #6b52b1;
+  --accent: #1b5771;
+  --accent-hover: #0e386c;
 }
 
 @theme inline {
