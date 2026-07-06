@@ -50,14 +50,7 @@ export default function RootLayout({
 
         {/* Top-left brand */}
         <div className="absolute top-9 left-6 z-50 flex items-center gap-2">
-          <img
-            src="/logo.png"
-            alt="Founders Growth"
-            className="h-8 w-auto"
-          />
-          <span className="text-xl font-semibold tracking-tight">
-            Founders Growth
-          </span>
+
         </div>
 
         <main>

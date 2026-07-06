@@ -24,7 +24,10 @@ export async function POST(req: Request) {
           quantity: 1
         }
       ],
-      success_url: new URL("/thank-you?session_id={CHECKOUT_SESSION_ID}", siteUrl).toString(),
+      success_url: new URL(
+        "/tools/stupidgrowthcalculator_476303894573?session_id={CHECKOUT_SESSION_ID}",
+        siteUrl
+      ).toString(),
       cancel_url: new URL("/pricing", siteUrl).toString()
     })
 

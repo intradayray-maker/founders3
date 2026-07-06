@@ -51,25 +51,24 @@ export async function POST(req: Request) {
         await transporter.sendMail({
           from: process.env.EMAIL_USER,
           to: customerEmail,
-          subject: "Your Vaylo Order Is Confirmed 🎉",
+          subject: "Your Stupid Growth Calculators (Bookmark This)",
           text: `
-Thanks for your order — your video is officially in the queue.
+Thanks for supporting the channel — seriously.
 
-To get started, reply to this email with:
+Your calculators live right here:
+https://foundersgrowth.fun/tools/stupidgrowthcalculator_476303894573
 
-• Your product photos
-• Any notes or style preferences
-• Optional hooks or angles you want us to highlight
+Bookmark that link.
 
-Delivery ETA: within 48 hours.
+They run in your browser — no downloads, no phone app, nothing sketchy.
+Just click and use.
 
-Talk soon,
+Enjoy,
 Ray
-support.vaylo@gmail.com
           `
         })
 
-        console.log("Confirmation email sent to:", customerEmail)
+        console.log("StupidTools email sent to:", customerEmail)
       } catch (err) {
         console.error("Email send error:", err)
       }
