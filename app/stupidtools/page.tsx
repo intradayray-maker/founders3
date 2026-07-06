@@ -5,7 +5,7 @@ import FAQStupid from "@/components/stupidtools/FAQStupid"
 import FinalCTAStupid from "@/components/stupidtools/FinalCTAStupid"
 
 import Footer from "@/components/Footer"
-import BackToTop from "@/components/BackToTop"
+import BackToTop from "@/components/stupidtools/BackToTop"
 
 export default function StupidToolsPage() {
   return (

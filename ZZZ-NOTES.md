@@ -1,9 +1,7 @@
-you list the price at $29
+should i start a business...how much would it cost per month to keep the business licesnse ...
 
-i dissagree
+business would be selling online serivces..and doing YT
 
-i think $5 is a no brainer and i would sell way more copies..
+goal would be to establish credit..i have no income now, so i cant get a mortgage .
 
-im thinking to make it an emotional buy...not an impulse buy..
-
-the only people that would buy it are the people NOT neccessarly looking to take business serious but those who are like "i really like the creator of the yt channel - how can i help"
+would starting the business and scaling it to 30k / m get me a mortgage..when?

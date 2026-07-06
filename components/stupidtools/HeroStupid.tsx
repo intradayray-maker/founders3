@@ -28,17 +28,16 @@ export default function Hero() {
 
 
 
-      {/* CTAs */}
-      <div className="flex gap-4">
-        <a
-          href="#pricing"
-          className="bg-accent hover:bg-accent-hover px-8 py-3 rounded-xl shadow-glow transition"
-        >
-          Get the Calculator
-        </a>
+{/* CTAs */}
+<div className="flex gap-4">
+  <a
+    href="#pricing"
+    className="glow-red-button"
+  >
+    Get the Stupid Calculator
+  </a>
+</div>
 
-
-      </div>
 
       {/* Subtext */}
       <p className="text-white/40 text-sm mt-6">
