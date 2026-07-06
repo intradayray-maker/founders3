@@ -3,7 +3,7 @@ export default function Hero() {
     <section className="pt-30 pb-2 flex flex-col items-center text-center px-6">
 
       <h1 className="text-4xl md:text-6xl font-bold mb-2">
-        Creator‑Powered Growth for SaaS
+        Creator‑Powered Growth for SaaS2
       </h1>
 
       <h2
