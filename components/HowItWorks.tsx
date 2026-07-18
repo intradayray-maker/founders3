@@ -23,7 +23,7 @@ export default function HowItWorks() {
           <ul className="text-white/60 text-sm leading-relaxed list-disc pl-5 space-y-1 mt-3">
             <li>Free website or redesign</li>
             <li>Google Business Profile setup</li>
-            <li>Facebook, Instagram, TikTok, YouTube creation</li>
+            <li>Facebook, Instagram, and TikTok creation</li>
             <li>Lead capture forms + call‑to‑action setup</li>
           </ul>
         </div>

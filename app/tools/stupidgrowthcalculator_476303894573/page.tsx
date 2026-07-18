@@ -6,10 +6,10 @@ export default function Page() {
   return (
     <div className="gt-calc p-6 space-y-12">
 
-      {/* First Calculator */}
+      {/* First Calculator
       <div className="gt-calc p-6 rounded-xl border border-slate-700/40 bg-[#05070b]">
         <StupidGrowthCalculator />
-      </div>
+      </div> */}
 
       {/* Second Calculator */}
       <div className="gt-calc p-6 rounded-xl border border-slate-700/40 bg-[#05070b]">

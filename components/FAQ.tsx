@@ -7,7 +7,7 @@ export default function FAQ() {
     ],
     [
       "What platforms do you set up?",
-      "Google Business Profile, Facebook, Instagram, TikTok, and YouTube — all optimized for local service visibility."
+      "Google Business Profile, Facebook, Instagram, and TikTok — all optimized for local service visibility."
     ],
     [
       "Do you handle the content?",

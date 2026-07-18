@@ -36,12 +36,7 @@ export default function Hero() {
           Start Your Free Build
         </a>
 
-        <a
-          href="#samples"
-          className="border border-accent/40 hover:border-accent px-8 py-3 rounded-xl transition"
-        >
-          View Client Previews
-        </a>
+        
       </div>
 
       <p className="text-white/40 text-sm mt-6">

@@ -86,7 +86,7 @@ export default function Pricing() {
         >
           <li><Check /> Free website build</li>
           <li><Check /> Google Business Profile</li>
-          <li><Check /> Facebook, Instagram, TikTok, YouTube setup</li>
+          <li><Check /> Facebook, Instagram, TikTok Setup and Mastery</li>
           <li><Check /> 30‑day content suite</li>
           <li><Check /> Lead capture forms</li>
           <li><Check /> Manager access setup</li>

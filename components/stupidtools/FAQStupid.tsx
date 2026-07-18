@@ -7,7 +7,7 @@ export default function FAQ() {
     ],
     [
       "Who is this for?",
-      "Creators, founders, or anyone who wants to know how much money they can actually make."
+      "New creators, small creators, or anyone who wants to know how much money they can actually make."
     ],
     [
       "Do I need to be smart?",
