@@ -1,23 +1,33 @@
 "use client"
 
-import { Check, XMark } from "@/components/ui/Checks"
-
-const stripePriceIds = {
-  basic: process.env.NEXT_PUBLIC_PRICE_BASIC,
-  standard: process.env.NEXT_PUBLIC_PRICE_STANDARD,
-  premium: process.env.NEXT_PUBLIC_PRICE_PREMIUM,
-} as const
+import { useState } from "react"
+import { Check } from "@/components/ui/Checks"
 
 export default function Pricing() {
 
-  async function handleBuy(priceId: string) {
-    if (!priceId) return
+  const [showCoupon, setShowCoupon] = useState(false)
+  const [coupon, setCoupon] = useState("")
+  const [finalPrice, setFinalPrice] = useState(1200)
+  const priceId = process.env.NEXT_PUBLIC_PRICE_MAIN
 
+  function previewCoupon() {
+    const code = coupon.toLowerCase()
+
+    if (code === "phone600") {
+      setFinalPrice(600)
+    } else if (code === "fast500") {
+      setFinalPrice(500)
+    } else {
+      setFinalPrice(1200)
+    }
+  }
+
+  async function handleBuy() {
     try {
-      const res = await fetch("/api/checkout", {
+      const res = await fetch("/api/checkout-website", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ priceId })
+        body: JSON.stringify({ priceId, coupon })
       })
 
       const data = await res.json()
@@ -30,113 +40,120 @@ export default function Pricing() {
   return (
     <section id="pricing" className="py-2 px-6">
 
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-18">
-        Strategy Call Pricing
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        Simple, Transparent Pricing
       </h2>
 
-      <p className="text-center text-white/60 max-w-xl mx-auto mb-10">
-        All call fees are credited toward your final Creator Ads System bill.
-        These calls help founders understand their product‑to‑creator fit,
-        distribution strategy, and rollout plan before committing to the full
-        creator‑powered distribution budget.
-      </p>
+      <div className="max-w-xl mx-auto bg-card border border-border rounded-xl p-8">
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <h3 className="
+          text-2xl
+          font-semibold
+          mb-2
+          bg-gradient-to-r
+          from-emerald-400
+          to-teal-900
+          bg-clip-text
+          text-transparent
+        ">
+          Complete Online Presence Build
+        </h3>
 
-        {/* STARTER CALL */}
-        <div className="bg-card border border-border rounded-xl p-8 flex flex-col">
-          <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-emerald-400 to-teal-900 bg-clip-text text-transparent">
-            Starter Call — $50
-          </h3>
+        <p className="text-white/60 text-sm mb-6">
+          Free website build, full social setup, 30‑day content suite, and turnkey launch system.
+        </p>
 
-          <p className="text-white/40 text-sm mb-4">
-            20‑minute clarity call for early‑stage founders.
-          </p>
+        <ul className="text-white/60 mb-8 space-y-2">
+          <li><Check /> Free website build</li>
+          <li><Check /> Google Business Profile</li>
+          <li><Check /> Facebook, Instagram, TikTok, YouTube setup</li>
+          <li><Check /> 30‑day content suite</li>
+          <li><Check /> Lead capture forms</li>
+          <li><Check /> Manager access setup</li>
+          <li><Check /> Delivered in under 5 days</li>
+          <li><Check /> Pay only after preview approval</li>
+        </ul>
 
-          <ul className="text-white/60 mb-6 space-y-2">
-            <li><Check /> Product analysis</li>
-            <li><Check /> Creator fit overview</li>
-            <li><Check /> Distribution direction</li>
-            <li><Check /> Roadmap preview</li>
-            <li><Check /> Call fee credited toward final bill</li>
-            <li><XMark /> No creator hunt</li>
-            <li><XMark /> No ad concepts</li>
-            <li><XMark /> No negotiation strategy</li>
-          </ul>
+        <div className="text-center mb-6">
+          <p className="text-white/40 text-sm mb-1">Base Price</p>
 
-          <button
-            type="button"
-            onClick={() => handleBuy(stripePriceIds.basic ?? "")}
-            className="mt-auto bg-accent hover:bg-accent-hover text-center py-3 px-4 rounded-xl shadow-glow transition"
-          >
-            Book Starter Call
-          </button>
-        </div>
-
-        {/* DEEP DIVE CALL */}
-        <div className="bg-card/90 border border-accent rounded-xl p-8 pt-12 shadow-[0_0_40px_rgba(139,92,246,0.35)] flex flex-col relative overflow-visible">
-
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white border border-white text-xs font-semibold px-4 py-1.5 rounded-full z-20">
-            Most Popular
+          <div className="flex flex-col items-center">
+            {finalPrice !== 1200 && (
+              <p className="text-white/40 line-through text-lg mb-1">$1,200</p>
+            )}
+            <p className="text-4xl font-bold">${finalPrice.toLocaleString()}</p>
           </div>
-
-          <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-emerald-400 to-teal-900 bg-clip-text text-transparent">
-            Deep Dive Call — $100
-          </h3>
-
-          <p className="text-white/40 text-sm mb-4">
-            40‑minute breakdown for founders needing full clarity.
-          </p>
-
-          <ul className="text-white/60 mb-6 space-y-2">
-            <li><Check /> Full product analysis</li>
-            <li><Check /> Creator fit + niche mapping</li>
-            <li><Check /> Distribution strategy</li>
-            <li><Check /> Creator hunt preview</li>
-            <li><Check /> Ad concept ideas</li>
-            <li><Check /> Call fee credited toward final bill</li>
-            <li><XMark /> No outreach strategy</li>
-            <li><XMark /> No partnership negotiation</li>
-          </ul>
-
-          <button
-            type="button"
-            onClick={() => handleBuy(stripePriceIds.standard ?? "")}
-            className="mt-auto bg-accent hover:bg-accent-hover text-center py-3 px-4 rounded-xl transition"
-          >
-            Book Deep Dive Call
-          </button>
         </div>
 
-        {/* BLUEPRINT CALL */}
-        <div className="bg-card border border-border rounded-xl p-8 flex flex-col">
-          <h3 className="text-2xl font-semibold mb-2 bg-gradient-to-r from-emerald-400 to-teal-900 bg-clip-text text-transparent">
-            Blueprint Call — $120
-          </h3>
+        <button
+          type="button"
+          onClick={handleBuy}
+          className="
+            block
+            mx-auto
+            bg-accent
+            hover:bg-accent-hover
+            text-center
+            py-3
+            px-8
+            rounded-xl
+            shadow-glow
+            transition
+            mb-4
+          "
+        >
+          Start Your Build
+        </button>
 
-          <p className="text-white/40 text-sm mb-4">
-            60‑minute full rollout plan for serious founders.
-          </p>
-
-          <ul className="text-white/60 mb-6 space-y-2">
-            <li><Check /> Full product breakdown</li>
-            <li><Check /> Creator fit + trust mapping</li>
-            <li><Check /> Distribution + scaling strategy</li>
-            <li><Check /> Full creator hunt preview</li>
-            <li><Check /> Multiple ad concepts</li>
-            <li><Check /> Outreach strategy</li>
-            <li><Check /> Partnership negotiation plan</li>
-            <li><Check /> Call fee credited toward final bill</li>
-          </ul>
-
+        {!showCoupon && (
           <button
             type="button"
-            onClick={() => handleBuy(stripePriceIds.premium ?? "")}
-            className="mt-auto bg-accent hover:bg-accent-hover text-center py-3 px-4 rounded-xl transition"
+            onClick={() => setShowCoupon(true)}
+            className="w-full text-white/50 text-sm hover:text-white/80 transition"
           >
-            Book Blueprint Call
+            Have a coupon?
           </button>
-        </div>
+        )}
+
+        {showCoupon && (
+          <div className="mt-4">
+            <input
+              type="text"
+              placeholder="Enter coupon code"
+              value={coupon}
+              onChange={(e) => setCoupon(e.target.value)}
+              className="
+                w-full
+                bg-black/20
+                border
+                border-border
+                rounded-xl
+                px-4
+                py-3
+                text-white
+              "
+            />
+            <button
+              type="button"
+              onClick={previewCoupon}
+              className="
+                mt-3
+                w-full
+                bg-accent
+                hover:bg-accent-hover
+                py-3
+                rounded-xl
+                transition
+              "
+            >
+              Apply Code
+            </button>
+          </div>
+        )}
+
+        <p className="text-white/40 text-xs text-center mt-6">
+          Hosting is $20/mo paid directly to Wix. You own everything.
+        </p>
 
       </div>
 

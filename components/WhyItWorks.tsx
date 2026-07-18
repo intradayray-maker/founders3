@@ -3,7 +3,7 @@ export default function WhyItWorks() {
     <section className="py-2 px-6 max-w-6xl mx-auto">
 
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-        Why Creator Ads Outperform Traditional Paid Ads
+        Why This System Works For Service Businesses
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -20,12 +20,12 @@ export default function WhyItWorks() {
             bg-clip-text
             text-transparent
           ">
-            Buyers Trust Creators
+            A Free Website or Redesign
           </h3>
           <p className="text-white/60 text-base leading-relaxed">
-            People trust creators more than brands. Creator recommendations feel
-            personal, authentic, and believable — which makes viewers far more
-            likely to take action.
+            You get a modern, mobile‑friendly website built for free. No upfront
+            cost, no surprises — just a clean, professional site designed to
+            convert visitors into leads.
           </p>
         </div>
 
@@ -41,12 +41,12 @@ export default function WhyItWorks() {
             bg-clip-text
             text-transparent
           ">
-            Native, Not Intrusive
+            Complete Online Presence Setup
           </h3>
           <p className="text-white/60 text-base leading-relaxed">
-            Creator ads blend naturally into the content people already watch.
-            They feel like part of the feed — not a forced interruption like
-            traditional paid ads.
+            Google Business Profile, Facebook, Instagram, TikTok, and YouTube —
+            all created, branded, optimized, and ready for customers to find you
+            everywhere they search.
           </p>
         </div>
 
@@ -62,12 +62,12 @@ export default function WhyItWorks() {
             bg-clip-text
             text-transparent
           ">
-            Influence Beats Interruption
+            30‑Day Social Content Suite
           </h3>
           <p className="text-white/60 text-base leading-relaxed">
-            Creators already influence buying decisions. Their audience listens,
-            trusts, and follows their recommendations — something paid ads can’t
-            replicate.
+            A full month of ready‑to‑post content: branded graphics, educational
+            posts, service highlights, reviews, FAQs, and engagement boosters —
+            all tailored to your niche.
           </p>
         </div>
 
@@ -83,12 +83,12 @@ export default function WhyItWorks() {
             bg-clip-text
             text-transparent
           ">
-            Bypasses Ad Blindness
+            Done‑For‑You Social Strategy
           </h3>
           <p className="text-white/60 text-base leading-relaxed">
-            Traditional ads get skipped, ignored, or scrolled past. Creator
-            content bypasses ad blindness because viewers are already engaged
-            with the creator’s personality and style.
+            You don’t just get content — you get a posting schedule, hashtag
+            strategy, engagement plan, and platform‑specific optimization so
+            your pages grow consistently.
           </p>
         </div>
 
@@ -104,12 +104,12 @@ export default function WhyItWorks() {
             bg-clip-text
             text-transparent
           ">
-            Creator‑Powered Distribution
+            Lead Capture & Conversion Tools
           </h3>
           <p className="text-white/60 text-base leading-relaxed">
-            Instead of paying platforms for reach, you leverage creators who
-            already have distribution. Their audience becomes your audience —
-            instantly and organically.
+            Your website includes quote forms, contact forms, booking links,
+            auto‑reply messaging, and call‑to‑action buttons — everything needed
+            to turn visitors into paying customers.
           </p>
         </div>
 
@@ -125,12 +125,12 @@ export default function WhyItWorks() {
             bg-clip-text
             text-transparent
           ">
-            Higher Conversion Rates
+            Zero‑Risk, Pay‑When‑Done Guarantee
           </h3>
           <p className="text-white/60 text-base leading-relaxed">
-            Creator ads convert better because they feel real. When a trusted
-            creator demonstrates your product, viewers respond with curiosity,
-            interest, and action — not resistance.
+            You approve your preview first. You only pay after everything is
+            built. Hosting is just $20/mo paid directly to the web host — you own your
+            site, your accounts, and your entire online presence.
           </p>
         </div>
 

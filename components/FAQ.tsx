@@ -2,28 +2,28 @@ export default function FAQ() {
 
   const faqs = [
     [
-      "Do you run paid ads?",
-      "No — I only run creator‑powered distribution. Instead of paying platforms, we leverage creators who already have trust and reach."
+      "Do I really get the website built for free?",
+      "Yes — I build your entire website, branding, and online presence upfront so you can preview everything before paying."
     ],
     [
-      "Do you find creators?",
-      "Yes — I research, analyze, and match creators to your product based on trust, niche fit, audience behavior, and conversion potential."
+      "What platforms do you set up?",
+      "Google Business Profile, Facebook, Instagram, TikTok, and YouTube — all optimized for local service visibility."
     ],
     [
-      "Do you negotiate deals?",
-      "Yes — I handle personalized outreach, deliverable negotiation, usage rights, timelines, and long‑term partnership structuring."
+      "Do you handle the content?",
+      "Yes — you get a full 30‑day content suite including branded graphics, service posts, reviews, FAQs, and engagement content."
     ],
     [
-      "Do you make the ads?",
-      "Yes — I produce creator‑native ads, UGC‑style demos, AI‑enhanced content, and high‑retention scripts designed for scroll‑stopping performance."
+      "How does payment work?",
+      "You only pay after you approve your preview. Hosting is $20/mo paid directly to Wix. No hidden fees."
     ],
     [
-      "Do you work with SaaS?",
-      "Yes — SaaS founders benefit heavily from creator‑powered distribution because creators explain tools better than traditional ads."
+      "Do you work with all home‑service businesses?",
+      "Yes — painters, plumbers, roof inspectors, pool techs, cleaners, electricians, landscapers, window techs, and more."
     ],
     [
-      "Do you work with AI tools?",
-      "Yes — AI tools perform extremely well with creator walkthroughs, demos, and trust‑based creator recommendations."
+      "How fast is delivery?",
+      "Most builds are completed in under 5 days, including your website, social setup, and content suite."
     ]
   ]
 
